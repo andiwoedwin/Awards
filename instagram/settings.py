@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'insta.apps.InstaConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    'star_ratings',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -159,5 +160,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'instagram-home'
 
 LOGIN_URL ='login'
+
+#ratings
+STAR_RATINGS_RERATE = False
+STAR_RATINGS_RANGE = 5
+STAR_RATINGS_ANONYMOUS = False
 
 django_heroku.settings(locals())
