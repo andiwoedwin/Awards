@@ -1,10 +1,16 @@
 {% extends 'insta/base.html' %}
+{% load ratings %}
+{% load static %}
 {% block content %}
+
+
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 <div class="container-fluid">
     <div class="row">
 
     {% for post in posts %}
-    <div class="col-md-6 mb-4 ">
+    <div class="col-md-4 mb-4 ">
         <div class="card">
 
         <!-- <article class="media content-section"> -->
@@ -22,6 +28,7 @@
             <p class="card-text">{{ post.content }}</p>            
             <img class="card-img-top" height="100%" width="100%" src= "{{ post.image.url }}" alt="Card image cap">
             <button class="btn btn-info mb-4" ><a href="{{ post.url }}">visit site</a></button>
+            <p>{% ratings post %}</p>
 
             <a href="{% url 'post-detail' post.pk %}">Review project</a>
 
@@ -33,5 +40,6 @@
         {% endfor %}
     </div>
 </div>
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 {% endblock content %}
     
