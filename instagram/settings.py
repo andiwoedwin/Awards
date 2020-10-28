@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'insta.apps.InstaConfig',
     'user.apps.UserConfig',
     'crispy_forms',
-    'django-star-ratings',
+    'star_ratings',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
