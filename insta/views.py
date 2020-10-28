@@ -56,25 +56,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
-# class ReviewCreateView(LoginRequiredMixin,CreateView):
-#     model = Review
-#     fields = ['design', 'usability', 'creativity', 'content']
-
-#     def dispatch(self, request, *args, **kwargs):
-#         """
-#         Overridden so we can make sure the `Project` instance exists
-#         before going any further.
-#         """
-#         self.project = get_object_or_404(Post, pk=kwargs['pk'])
-#         return super().dispatch(request, *args, **kwargs)
-
-#     def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         form.instance.project = self.project
-#         return super().form_valid(form)
-
-# def about(request):
-#     return render(request, 'insta/about.html',{'title':'About'})
 
 
 
